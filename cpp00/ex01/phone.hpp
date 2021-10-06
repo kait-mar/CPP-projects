@@ -20,12 +20,12 @@ public:
 
 contact::contact(void)
 {
-    std::cout<<"contact's constructor called\n";
+//    std::cout<<"contact's constructor called\n";
 }
 
 contact::~contact()
 {
-    std::cout<<"contact's desctuctor called\n";
+ //   std::cout<<"contact's desctuctor called\n";
 }
 
 class PhoneBook
@@ -38,12 +38,13 @@ public:
 
 PhoneBook::PhoneBook(void)
 {
-    std::cout<<"phonebook's constructor called\n";
+//    std::cout<<"phonebook's constructor called\n";
 }
 
 PhoneBook::~PhoneBook()
 {
-    std::cout<<"phonebook's destructor called\n";
+//    std::cout<<"phonebook's destructor called\n";
 }
+void    affichage_en_n(PhoneBook phone, int i);
 
 #endif

@@ -1,10 +1,10 @@
-NAME= human
+NAME= file
 
 CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  main.cpp humanA.cpp humanB.cpp Weapon.cpp
+SRCS=  main.cpp
 
 OBJ = $(SRCS:.c=.o)
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o human
+	$(CC) $(FLAGS) $(SRCS)  -o file
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 

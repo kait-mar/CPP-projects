@@ -1,14 +1,12 @@
-NAME= zombie
+NAME= fixed
 
 CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS=  main.cpp Fixed.cpp
 
 OBJ = $(SRCS:.c=.o)
-
-HEADERS= Zombie.hpp
 
 DELETEOBJ= rm -rf *.o
 
@@ -16,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o zombie
+	$(CC) $(FLAGS) $(SRCS)  -o fixed
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 

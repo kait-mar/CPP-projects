@@ -10,14 +10,15 @@ Weapon::Weapon(){
 Weapon::~Weapon(void){
     //std::cout<<"weapon destructor\n";
 }
+
 const std::string   &Weapon::getType(void)
 {
     const std::string &str = this->type;
 
     return (str);
 }
+
 void    Weapon::setType(std::string str)
 {
     this->type = str;
 }
-

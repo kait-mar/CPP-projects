@@ -1,21 +1,16 @@
 #include "Zombie.hpp"
 
-Zombie *newZombie( std::string name ){
-    Zombie  *z = new Zombie(name);
-
-    return (z);
-}
-
-void randomChump( std::string name ){
-    Zombie  z(name);
-    z.announce();
-    return ;
-}
-
-int main()
+Zombie::Zombie(std::string name)
 {
-    Zombie *z  = newZombie("kait");
-    delete(z);
-    randomChump("mar");
-    return (1);
+    this->name = name;
+    std::cout<<this->name<<"'s constructer called\n";
+}
+
+Zombie::~Zombie()
+{
+    std::cout<<this->name<<"'s destructer called\n";
+}
+
+void    Zombie::announce(void){
+    std::cout<<this->name<<"BraiiiiiiinnnzzzZ..."<<std::endl;
 }

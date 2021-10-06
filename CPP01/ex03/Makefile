@@ -2,7 +2,7 @@ NAME= human
 
 CC= clang++
 
-FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror -g
 
 SRCS=  main.cpp humanA.cpp humanB.cpp Weapon.cpp
 
