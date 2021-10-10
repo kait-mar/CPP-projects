@@ -10,7 +10,9 @@ void    create_replace(std::string filename, std::string s1, std::string s2)
 {
     std::fstream    file;
     std::fstream    news;
+    std::string line;
     std::string temp;
+    int rec;
 
     file.open(filename, std::ios::in);
     news.open(filename + ".replace", std::ios::out);
@@ -19,19 +21,20 @@ void    create_replace(std::string filename, std::string s1, std::string s2)
         std::cout<<"open file error occured!!\n";
         exit (1);
     }
-    while (1)
+    temp = "";
+    while (std::getline(file, line))
     {
-        file >> temp;
-        if (file.eof())
-            break ;
-        if (temp.compare(s1) == 0)
-            news << s2;
-        else
-            news << temp;
-        news << " ";
-    }
-    news.close();
-    file.close();
+        while ((rec = line.find(s1)) != -1)
+        {
+            temp.append(line.substr(0, rec));
+            temp.append(s2);
+            line = line.substr(rec + s1.length());
+         }
+         news << temp << std::endl;
+         temp.clear();
+     }
+     news.close();
+     file.close();
 }
 
 int main(int argc, char *argv[])
