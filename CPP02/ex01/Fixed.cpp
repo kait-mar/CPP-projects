@@ -36,29 +36,27 @@ Fixed   &Fixed::operator=(Fixed a)
 /*******************************************/
 Fixed::Fixed(int const n)
 {
-    this->nbr = n;
+    this->val = (int)roundf(n << this->bit);
 }
 /***************************/
 Fixed::Fixed(float const x)
 {
-    this->nbr = x;
+    this->val = roundf(x * (1 << this->bit));
 }
 /************************/
 int Fixed::toInt(void) const
 {
-    float n = ((int)this->nbr << 1) / 2;
-    std::cout<< n <<std::endl;
-    return ((int)n);
+    return ((int)(this->val / (1 << this->bit)));
 }
 /*****************************/
 float   Fixed::toFloat(void) const
 {
-    float n = (this->nbr << 1) / 2;
-    std::cout<<n<<std::endl;
+    float n = (float)this->val / (float)(1 << this->bit);
     return (n);
 }
 /****************************/
-std::ofstream   operator<<(Fixed obj)
+std::ostream   &operator<<(std::ostream &os, const Fixed &obj)
 {
-    std::cout<<"the value is"<<getRawBits();
+    os << obj.toFloat();
+    return (os);
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cmath>
 
 class   Fixed
 {
@@ -21,8 +22,7 @@ class   Fixed
         void setRawBits(int const raw);
         Fixed   &operator=(Fixed a);
         float toFloat(void) const;
-        std::ofstream operator<<(Fixed obj);
         int toInt(void) const;
 };
-
+std::ostream   &operator<<(std::ostream &os, const Fixed &obj);
 #endif
