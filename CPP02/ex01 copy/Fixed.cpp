@@ -57,12 +57,12 @@ std::ostream   &operator<<(std::ostream &os, const Fixed &obj)
     return (os);
 }
 /**************************/
-bool    Fixed::operator<(Fixed obj)
+bool    Fixed::operator<(Fixed const &obj) const
 {
     return (this->val < obj.val);
 }
 /**************************/
-bool    Fixed::operator>(Fixed obj)
+bool    Fixed::operator>(Fixed const &obj) const
 {
     return (this->val > obj.val);
 }
@@ -129,15 +129,17 @@ Fixed   &Fixed::max(Fixed &obj, Fixed &obj2)
         return (obj);
     return (obj2);
 }
-/*********************************/
-// float   &Fixed::min(Fixed &obj, Fixed &obj2)
-// {
-//     if (*this > obj)
-//     {
-//         float   &a = obj.toFloat();
-//     }
-//     else
-//         float   &a = this->toFloat();
-//     return (a);
-//     //return (this->toFloat());
-// }
+/************************/
+const Fixed   &Fixed::min(const Fixed &obj, const Fixed &obj2)
+{
+    if (obj > obj2)
+        return (obj2);
+    return (obj);
+}
+/****************************/
+const Fixed   &Fixed::max(const Fixed &obj, const Fixed &obj2)
+{
+    if (obj > obj2)
+        return (obj);
+    return (obj2);
+}

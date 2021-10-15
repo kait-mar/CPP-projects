@@ -25,8 +25,8 @@ class   Fixed
         int toInt(void) const;
         static Fixed    &min(Fixed &obj, Fixed &obj2);
         static Fixed    &max(Fixed &obj, Fixed &obj2);
-        bool    operator<(Fixed obj);
-        bool    operator>(Fixed obj);
+        bool    operator<(Fixed const &obj) const;
+        bool    operator>(Fixed const &obj) const;
         bool    operator<=(Fixed obj);
         bool    operator>=(Fixed obj);
         bool    operator==(Fixed obj);
@@ -36,8 +36,8 @@ class   Fixed
         Fixed    operator/(Fixed obj);
         Fixed    operator++(void);
         Fixed    operator--(void);
-        static Fixed   &min(Fixed &obj, Fixed &obj2);
-        float   &max(Fixed &obj);
+        static const Fixed   &min(Fixed const  &obj, Fixed const &obj2);
+        static const Fixed   &max(Fixed const  &obj, Fixed const &obj2);
 
 };
 std::ostream   &operator<<(std::ostream &os, const Fixed &obj);
