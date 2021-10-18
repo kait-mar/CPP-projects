@@ -6,8 +6,10 @@
 class   ScavTrap: public ClapTrap
 {
     public:
+        ScavTrap();
         ScavTrap(std::string name);
         ~ScavTrap();
+        void    _print();
         void    guardGate();
 };
 

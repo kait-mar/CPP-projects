@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string str): Name(str)
+ClapTrap::ClapTrap(std::string str):
+Name(str), Hitpoints(10), Energy(10), attack_damage(0)
 {
     std::cout<<this->Name<<"'s constructor called\n";
 }
