@@ -1,0 +1,6 @@
+in CPP04/ex01 :
+{
+    how to delete in the array of non pointer animal, and how to directly delete animals as Cat and Dog ?!!!
+    I can't see the utility of using virtual in destructors !!
+    how about the deep copy of cats and dogs ? I've orload the = operator but not been called !!!
+}
