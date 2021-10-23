@@ -12,27 +12,31 @@ protected:
 public:
     AMateria();
     AMateria(std::string const & type);
+    AMateria(AMateria &obj);
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
     void    setType(std::string str) {this->type = str;}
+    AMateria    &operator=(AMateria &obj);
     virtual ~AMateria() {}
 };
 
-class ICharacter
+class IMateriaSource
 {
-    std::string name;
 public:
-    ICharacter(std::string str);
-    ICharacter(ICharacter &obj);
-    ICharacter  &operator=(ICharacter &obj);
-    virtual ~ICharacter() {}
-    virtual std::string const & getName() const = 0;
-    std::string getName();
-    virtual void equip(AMateria* m) = 0;
-    virtual void unequip(int idx) = 0;
-    virtual void use(int idx, ICharacter& target) = 0;
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria*) = 0;
+    virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
+class MateriaSource
+{
+    std::string source[4];
+    int         len;
+public:
+    virtual ~MateriaSource() {}
+    virtual void learnMateria(AMateria*);
+    virtual AMateria* createMateria(std::string const & type);
 };
 
 class Ice : public AMateria
@@ -50,6 +54,5 @@ public:
     AMateria* clone() const;
     ~Cure();
 };
-
 
 #endif
