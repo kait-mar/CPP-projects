@@ -1,10 +1,10 @@
 NAME= amateria
 
-CC= clang++
+CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  materia.cpp main.cpp
+SRCS=  materia.cpp main.cpp character.cpp
 OBJ = $(SRCS:.c=.o)
 
 DELETEOBJ= rm -rf *.o

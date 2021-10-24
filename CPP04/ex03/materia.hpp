@@ -29,11 +29,12 @@ public:
     virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
-    std::string source[4];
+    AMateria* source[4];
     int         len;
 public:
+    MateriaSource();
     virtual ~MateriaSource() {}
     virtual void learnMateria(AMateria*);
     virtual AMateria* createMateria(std::string const & type);

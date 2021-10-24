@@ -13,20 +13,20 @@ public:
     virtual void use(int idx, ICharacter& target) = 0;
 };
 
-class Character : ICharacter
+class Character : public ICharacter
 {
     std::string name;
-    AMateria    *slot[4];
+    AMateria* slot[4];
     int         len;
 public:
+    Character();
     Character(std::string str);
     Character(Character &obj);
     Character  &operator=(Character &obj);
-    virtual ~Character() {}
-    virtual std::string const & getName();
-    //std::string getName();
+    virtual ~Character();
+    virtual std::string const & getName() const;
     int getLen();
-    AMateria    *getMateria();
+    AMateria    *getMateria(int idx);
     virtual void equip(AMateria* m);
     virtual void unequip(int idx);
     virtual void use(int idx, ICharacter& target);

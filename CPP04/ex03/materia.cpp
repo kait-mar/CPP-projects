@@ -1,4 +1,4 @@
-#include "materia.hpp"
+#include "character.hpp"
 
 AMateria::AMateria(std::string const & type): type(type)
 {
@@ -39,58 +39,51 @@ Cure::~Cure()
 
 AMateria* Ice::clone() const
 {
-    AMateria    **real;
-
-    real = new AMateria*;
-    (*real)->setType(this->type);
-    return (*real);
+    return (new Ice());
 }
 
 AMateria* Cure::clone() const
 {
-    AMateria    **real;
-
-    real = new AMateria*;
-    (*real)->setType(this->type);
-    return (*real);
+    return (new Cure());
 }
-
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout<<"Ice: \"* shoots an ice bolt at\""<<target.getName()<<std::endl;
-    std::cout<<"Cure: \"* heals "<<target.getName()<<"'s wounds *\""<<std::endl;
+    std::cout<<"Ice: * shoots an ice bolt at "<<target.getName()<<" *"<<std::endl;
+    std::cout<<"Cure: * heals "<<target.getName()<<"'s wounds *"<<std::endl;
 }
 
 /*************************/
-//source materia
-MateriaSource::~MateriaSource(): len(0)
+
+MateriaSource::MateriaSource(): len(0)
 {
+    int i = 0;
+    while (i < 4)
+        this->source[i++] = NULL;
 }
-void IMateriaSource::learnMateria(AMateria *obj)
+void MateriaSource::learnMateria(AMateria *obj)
 {
-    std::cout<<"tryna copy the materia by the materiaSource constructor\n";
-    this->source[this->len] = obj->getType();
-    this->len += 1;
+    //std::cout<<"tryna copy the materia by the materiaSource constructor\n";
+    if (this->len < 4)
+    {
+        this->source[this->len] = obj->clone();
+        this->len += 1;
+    }
 }
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     int i;
-    std::string t = "";
 
     i = 0;
     while (i < this->len)
     {
-        if (this->source[i] == type)
+        if (this->source[i]->getType() == type)
         {
-            t = type;
             break ;
         }
+        i++;
     }
-    if (t == "")
+    if (i == this->len)
         return (0);
-    AMateria    **m;
-    m = new AMateria*;
-    (*m)->setType(t);
-    return (*m);
+    return (this->source[i]->clone());
 }
