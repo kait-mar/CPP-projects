@@ -15,7 +15,6 @@ std::string const & AMateria::getType() const
 AMateria    &AMateria::operator=(AMateria &obj)
 {
     this->type = obj.type; //doesn't make sense !!
-
     return (*this);
 }
 
@@ -49,8 +48,10 @@ AMateria* Cure::clone() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout<<"Ice: * shoots an ice bolt at "<<target.getName()<<" *"<<std::endl;
-    std::cout<<"Cure: * heals "<<target.getName()<<"'s wounds *"<<std::endl;
+    if (this->type == "ice")
+        std::cout<<"Ice: * shoots an ice bolt at "<<target.getName()<<" *"<<std::endl;
+    else if (this->type == "cure")
+        std::cout<<"Cure: * heals "<<target.getName()<<"'s wounds *"<<std::endl;
 }
 
 /*************************/

@@ -80,7 +80,7 @@ void Character::equip(AMateria* m)
     //std::cout<<"trynna equip a new materia to inventory\n";
     if (this->len == 4)
         return ;
-    this->slot[len - 1] = m;
+    this->slot[len] = m;
     this->len += 1;
 }
 void Character::unequip(int idx)
