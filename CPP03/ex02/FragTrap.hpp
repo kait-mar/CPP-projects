@@ -9,6 +9,7 @@ public:
     FragTrap();
     FragTrap(std::string str);
     ~FragTrap();
+    virtual void attack(std::string const & target);
     void highFivesGuys(void);
 };
 

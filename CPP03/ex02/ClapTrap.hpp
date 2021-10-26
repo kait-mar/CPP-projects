@@ -19,7 +19,7 @@ class   ClapTrap
         unsigned int    get_energy();
         unsigned int    get_points();
         void    set(std::string str, unsigned int hit, unsigned int energy, unsigned int damage);
-        void attack(std::string const & target);
+        virtual void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         void    _print();

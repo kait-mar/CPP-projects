@@ -6,12 +6,12 @@ DiamondTrap::DiamondTrap()
     std::cout<<"diamond default constructor called\n";
 }
 
-DiamondTrap::DiamondTrap(std::string str)
+DiamondTrap::DiamondTrap(std::string str): ClapTrap(str + "_clap_name")
 {
     this->Name = str;
     set(100, 50, 30);
     std::cout<<this->Name<<" diamond constructor called\n";
-    this->set_name(str + "_clap_name");
+   // this->set_name(str + "_clap_name");
 }
 
 DiamondTrap::~DiamondTrap()

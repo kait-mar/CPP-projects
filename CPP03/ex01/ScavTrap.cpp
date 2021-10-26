@@ -25,3 +25,8 @@ void    ScavTrap::guardGate()
 {
     std::cout<<this->get_name()<<" ScavTrap have enterred in Gate keeper mode\n";
 }
+
+void    ScavTrap::attack(std::string const & target)
+{
+    std::cout<<"ScavTrap "<<this->get_name()<<"attack "<<target<<", causing "<<this->get_damage()<<" points of damage !\n";
+}
