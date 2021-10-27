@@ -9,9 +9,9 @@ Bureaucrat::Bureaucrat(std::string str, int note): name(str), grade(note)
     // try
     // {
         if (note > 150)
-            throw(Bureaucrat::GradeTooHighException());
-        else if (note < 1)
             throw(Bureaucrat::GradeTooLowException());
+        else if (note < 1)
+            throw(Bureaucrat::GradeTooHighException());
     // }
     // catch(Bureaucrat::GradeTooHighException &s)
     // {
@@ -31,11 +31,17 @@ Bureaucrat::~Bureaucrat()
 
 void    Bureaucrat::dec()
 {
-    this->grade += 1;
+    if (this->grade + 1 > 150)
+        throw(Bureaucrat::GradeTooLowException());
+    else
+        this->grade += 1;
 }
 void    Bureaucrat::inc()
 {
-    this->grade -= 1;
+    if (this->grade - 1 < 1)
+        throw(Bureaucrat::GradeTooHighException());
+    else
+        this->grade -= 1;
 }
 
 std::string Bureaucrat::getName()

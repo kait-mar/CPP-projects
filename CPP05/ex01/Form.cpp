@@ -3,30 +3,23 @@
 Form::Form(std::string str, int note1, int note2) :
 name(str), grade_sign(note1), grade_exec(note2), sign(0)
 {
-    //this->name = (const std::string)str;
-    try
-    {
         if (note1 > 150 || note2 > 150)
             throw(Form::GradeTooLowException());
         else if (note1 < 1 || note2 < 1)
             throw(Form::GradeTooHighException());
-    }
-    catch(Form::GradeTooHighException &s)
-    {
-        std::cout<<s.what();
-        //std::exit(1);
-    }
-    catch(Form::GradeTooLowException &b)
-    {
-        std::cout<<b.what();
-        //std::exit(1);
-    }
-    //std::cout<<"hello***************\n";
+    // catch(Form::GradeTooHighException &s)
+    // {
+    //     std::cout<<s.what();
+    // }
+    // catch(Form::GradeTooLowException &b)
+    // {
+    //     std::cout<<b.what();
+    // }
 }
 
-Form::~Form()
-{
-}
+// Form::~Form()
+// {
+// }
 
 std::string Form::getName()
 {
@@ -50,19 +43,16 @@ std::ostream  &operator<<(std::ostream &os, Form &obj)
 
 void    Form::beSigned(Bureaucrat obj)
 {
-    try
+    if (obj.getGrade() < this->grade_sign)
     {
-        if (obj.getGrade() >= 1 && obj.getGrade() < this->grade_sign)
-        {
-            this->sign = 1;
-        }
-        else
-            throw(Form::GradeTooLowException());
+        this->sign = 1;
     }
-    catch(const Form::GradeTooLowException& e)
-    {
-        std::cout << e.what() << '\n';
-    }
+    else
+        throw(Form::GradeTooLowException());
+    // catch(const Form::GradeTooLowException& e)
+    // {
+    //     std::cout << e.what() << '\n';
+    // }
 }
 
 bool    Form::getSign()

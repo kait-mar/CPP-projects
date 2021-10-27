@@ -12,6 +12,8 @@ class Bureaucrat
 private:
     std::string const name;
     int grade;
+
+public:
     struct  GradeTooHighException : public std::exception
     {
         const char *what() const throw(){
@@ -24,7 +26,7 @@ private:
             return ("an exception of a too low Bureaucrat grade has been raised\n");
         }
     };
-public:
+
     Bureaucrat();
     Bureaucrat(std::string str, int note);
     std::string getName();
