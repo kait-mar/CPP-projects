@@ -4,7 +4,7 @@ CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  phone.cpp
+SRCS=  phone.cpp main.cpp
 
 OBJ = $(SRCS:.c=.o)
 

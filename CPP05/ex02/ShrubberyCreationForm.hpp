@@ -10,8 +10,10 @@ private:
     const int     grade_sign = 145;
     const int      grade_exec = 137;
     bool    sign;
+    Bureaucrat  cible;
 public:
-    ShrubberyCreationForm(/* args */);
+    ShrubberyCreationForm(Bureaucrat const & executor);
+    void    action(Bureaucrat const & executor);
     ~ShrubberyCreationForm();
 };
 

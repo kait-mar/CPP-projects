@@ -5,11 +5,12 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/CPP05/ex01/form",
+            "program": "${workspaceFolder}/CPP00/ex00/megaphone",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

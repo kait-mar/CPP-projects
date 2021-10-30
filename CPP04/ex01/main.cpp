@@ -4,6 +4,7 @@
 {
     int    i = 0;
     Animal *animal = new Animal[6];
+    //use animal as double ** ==> animal = new animal *
     std::cout<<"*****************\n";
     while (i < 6)
     {

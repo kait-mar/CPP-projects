@@ -13,6 +13,7 @@ private:
 public:
     RobotomyRequestForm(/* args */);
     ~RobotomyRequestForm();
+    void    action(Bureaucrat const & executor);
 };
 
 

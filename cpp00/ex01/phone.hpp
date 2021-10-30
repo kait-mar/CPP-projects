@@ -7,44 +7,36 @@
 
 class contact
 {
-public:
     std::string  first_name;
     std::string  last_name;
     std::string  nickname;
     std::string  phone_number;
     std::string  darkest_secret;
-
+public:
     contact(void);
+    std::string get_first() {return (first_name);}
+    std::string get_last() {return (last_name);}
+    std::string get_nick() {return (nickname);}
+    std::string get_phone() {return (phone_number);}
+    std::string get_secret() {return (darkest_secret);}
+    void set_first(std::string str) {first_name = str;}
+    void set_last(std::string str) {last_name = str;}
+    void set_nick(std::string str) {nickname = str;}
+    void set_phone(std::string str) {phone_number = str;}
+    void set_secret(std::string str) {darkest_secret = str;}
     ~contact();
 };
 
-contact::contact(void)
-{
-//    std::cout<<"contact's constructor called\n";
-}
-
-contact::~contact()
-{
- //   std::cout<<"contact's desctuctor called\n";
-}
-
 class PhoneBook
 {
+    contact cont[8];
 public:
-    contact contact[8];
     PhoneBook(void);
+    contact get_contact(int i) {return (cont[i]);}
+    void    set_contact(int i, std::string str, int choix);
     ~PhoneBook();
 };
 
-PhoneBook::PhoneBook(void)
-{
-//    std::cout<<"phonebook's constructor called\n";
-}
-
-PhoneBook::~PhoneBook()
-{
-//    std::cout<<"phonebook's destructor called\n";
-}
 void    affichage_en_n(PhoneBook phone, int i);
 
 #endif

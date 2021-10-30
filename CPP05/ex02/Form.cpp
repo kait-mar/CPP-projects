@@ -64,7 +64,8 @@ int        Form::execute (Bureaucrat const & executor)const
 {
     if (executor.getGrade() <= this->grade_exec && this->sign)
     {
-        action(executor.getName());
+        //action(executor.getName());
+        this->action(executor);
         return (1);
     }
     else
@@ -72,10 +73,10 @@ int        Form::execute (Bureaucrat const & executor)const
     return (0);
 }
 
-void    action(std::string str)
-{
-    std::fstream    fd;
+// void    action(std::string str)
+// {
+//     std::fstream    fd;
 
-    fd.open(str + "_shrubbery", std::ios::out);
-    fd<<"hello\n";
-}
+//     fd.open(str + "_shrubbery", std::ios::out);
+//     fd<<"hello\n";
+// }

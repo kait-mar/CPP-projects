@@ -4,7 +4,8 @@ CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  bureaucrat.cpp main.cpp Form.cpp
+SRCS=  bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+
 OBJ = $(SRCS:.c=.o)
 
 DELETEOBJ= rm -rf *.o

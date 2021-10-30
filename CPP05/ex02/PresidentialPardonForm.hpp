@@ -1,7 +1,7 @@
 #ifndef PRESIDENTIALPARDONFORM_H
 #define PRESIDENTIALPARDONFORM_H
 
-#include "form.h"
+#include "Form.hpp"
 
 class PresidentialPardonForm
 {
@@ -12,6 +12,7 @@ private:
     bool    sign;
 public:
     PresidentialPardonForm(/* args */);
+    void    action(Bureaucrat const & executor);
     ~PresidentialPardonForm();
 };
 
