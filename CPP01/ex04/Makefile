@@ -1,6 +1,6 @@
 NAME= file
 
-CC= clang++
+CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 

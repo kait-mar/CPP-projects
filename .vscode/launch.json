@@ -10,7 +10,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/CPP00/ex00/megaphone",
+            "program": "${workspaceFolder}/CPP01/ex04/file",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

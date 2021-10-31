@@ -2,33 +2,41 @@
 
 int print_error_exit(void)
 {
-    std::cout<<"error\n";
+    std::cout<<"Error argument\n";
     exit(1);
 }
 
 void    create_replace(std::string filename, std::string s1, std::string s2)
 {
-    std::fstream    file;
-    std::fstream    news;
+    std::ifstream    file;
+    std::ofstream    news;
     std::string line;
     std::string temp;
     int rec;
 
     file.open(filename, std::ios::in);
-    news.open(filename + ".replace", std::ios::out);
     if (!file || !news)
     {
         std::cout<<"open file error occured!!\n";
         exit (1);
     }
+    news.open(filename + ".replace", std::ios::out);
     temp = "";
     while (std::getline(file, line))
     {
-        while ((rec = line.find(s1)) != -1)
+        while (1)
         {
-            temp.append(line.substr(0, rec));
-            temp.append(s2);
-            line = line.substr(rec + s1.length());
+            if ((rec = line.find(s1)) != -1)
+            {
+                temp.append(line.substr(0, rec));
+                temp.append(s2);
+                line = line.substr(rec + s1.length());
+            }
+            else
+            {
+                temp.append(line);
+                break ;
+            }
          }
          news << temp << std::endl;
          temp.clear();
