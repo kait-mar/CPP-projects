@@ -17,4 +17,5 @@ class   karen
         ~karen();
 };
 
+int     check(std::string level, int n);
 #endif

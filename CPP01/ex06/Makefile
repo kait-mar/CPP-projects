@@ -1,4 +1,4 @@
-NAME= karen
+NAME= karenFilter
 
 CC= clang++
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o karen
+	$(CC) $(FLAGS) $(SRCS)  -o karenFilter
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 

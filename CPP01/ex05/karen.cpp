@@ -39,25 +39,14 @@ int     check(std::string level)
         return (4);
     return (-1);
 }
-
 void    karen::complain(std::string level)
 {
-    void    (karen::*ptrfunc)(std::string) = &karen::debug();
+    void    (karen::*ptrfunc[4])(void) = {&karen::debug, &karen::info, &karen::warning, &karen::error};
+    std::string ptr[4] = {"debug", "info", "warning", "error"};
 
-    //ptrfunc = &karen::debug();
-    level = "hello";
-    // switch(check(level))
-    // {
-    //     case 1:
-    //         this->debug();
-    //     case 2:
-    //         this->info();
-    //     case 3:
-    //         this->warning();
-    //     case 4:
-    //         this->error();
-    //         break ;
-    //     default:
-    //         std::cout<<"not a valid level\n";
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        if (ptr[i] == level)
+            (this->*(ptrfunc[i]))();
+    }
 }

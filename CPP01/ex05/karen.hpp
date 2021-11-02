@@ -17,4 +17,5 @@ class   karen
         ~karen();
 };
 
+typedef void    (karen::*ptrfunc[4])(void);
 #endif
