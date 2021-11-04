@@ -53,4 +53,3 @@ void    karen::complain(std::string level)
             (this->*(ptrfunc[i]))();
     }
 }
-

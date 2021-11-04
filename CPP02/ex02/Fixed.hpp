@@ -10,7 +10,6 @@ class   Fixed
 {
     int val;
     static const int    bit = 8;
-    float   nbr;
 
     public:
         Fixed();
@@ -30,15 +29,18 @@ class   Fixed
         bool    operator<=(Fixed obj);
         bool    operator>=(Fixed obj);
         bool    operator==(Fixed obj);
+        bool    operator!=(Fixed obj);
         Fixed    operator+(Fixed obj);
         Fixed    operator-(Fixed obj);
         Fixed    operator*(Fixed obj);
         Fixed    operator/(Fixed obj);
         Fixed    operator++(void);
+        Fixed    operator++(int);
         Fixed    operator--(void);
+        Fixed    operator--(int);
         static const Fixed   &min(Fixed const  &obj, Fixed const &obj2);
         static const Fixed   &max(Fixed const  &obj, Fixed const &obj2);
-
 };
+
 std::ostream   &operator<<(std::ostream &os, const Fixed &obj);
 #endif

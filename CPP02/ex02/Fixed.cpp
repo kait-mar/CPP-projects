@@ -82,6 +82,11 @@ bool    Fixed::operator==(Fixed obj)
     return (this->val == obj.val);
 }
 /**************************/
+bool    Fixed::operator!=(Fixed obj)
+{
+    return (this->val != obj.val);
+}
+/**************************/
 Fixed    Fixed::operator+(Fixed obj)
 {
     return (Fixed(this->toFloat() + obj.toFloat()));
@@ -104,16 +109,30 @@ Fixed    Fixed::operator/(Fixed obj)
 /**********************/
 Fixed    Fixed::operator++(void)
 {
-    Fixed   a;
-    a.setRawBits(this->val + 1);
+    //Fixed   a;
+    // a.setRawBits(this->val + 1);
+    this->setRawBits(this->val + 1);
+    return (*this);
+}
+/**********************/
+Fixed    Fixed::operator++(int)
+{
+    Fixed   a(*this);
+    this->setRawBits(this->val + 1);
+    return (a);
+}
+/**********************/
+Fixed    Fixed::operator--(int)
+{
+    Fixed   a(*this);
+    this->setRawBits(this->val - 1);
     return (a);
 }
 /******************************/
 Fixed    Fixed::operator--(void)
 {
-    Fixed   a;
-    a.setRawBits(this->val - 1);
-    return (a);
+    this->setRawBits(this->val - 1);
+    return (*this);
 }
 /****************************/
 Fixed   &Fixed::min(Fixed &obj, Fixed &obj2)

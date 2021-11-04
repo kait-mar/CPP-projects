@@ -7,10 +7,12 @@ class   ScavTrap: virtual public ClapTrap
 {
     public:
         ScavTrap();
+        ScavTrap(ScavTrap const &obj);
         ScavTrap(std::string name);
         ~ScavTrap();
-        void    _print();
+        void attack(std::string const & target);
         void    guardGate();
+        ScavTrap    &operator=(ScavTrap const &obj);
 };
 
 #endif

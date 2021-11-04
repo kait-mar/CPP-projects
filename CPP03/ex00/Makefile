@@ -4,7 +4,7 @@ CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  ClapTrap.cpp maincpp
+SRCS=  ClapTrap.cpp main.cpp
 OBJ = $(SRCS:.c=.o)
 
 HEADERS= ClapTrap.hpp

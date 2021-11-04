@@ -25,6 +25,7 @@ void    Fixed::setRawBits(int const raw)
 }
 Fixed   &Fixed::operator=(Fixed a)
 {
+    std::cout<<"assignation operator called\n";
     this->val = a.val;
     return (*this);
 }

@@ -30,17 +30,20 @@ void    Fixed::setRawBits(int const raw)
 /*******************************************/
 Fixed   &Fixed::operator=(Fixed a)
 {
+    std::cout<<"assignation operator called\n";
     this->val = a.val;
     return (*this);
 }
 /*******************************************/
 Fixed::Fixed(int const n)
 {
+    std::cout<<"Int constructor called\n";
     this->val = (int)roundf(n << this->bit);
 }
 /***************************/
 Fixed::Fixed(float const x)
 {
+    std::cout<<"Float constructor called\n";
     this->val = roundf(x * (1 << this->bit));
 }
 /************************/

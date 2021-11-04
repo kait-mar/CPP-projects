@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():
+Hitpoints(10), Energy(10), attack_damage(0)
 {
     std::cout<<this->Name<<"ClapTrap default constructor called\n";
 }
@@ -27,14 +28,11 @@ void    ClapTrap::beRepaired(unsigned int amount)
     this->Energy += amount;
     std::cout<<"beRepaired function is called\n";
 }
-void    ClapTrap::set(std::string str, unsigned int hit, unsigned int energy, unsigned int damage)
+ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 {
-    this->Name = str;
-    this->Hitpoints = hit;
-    this->Energy = energy;
-    this->attack_damage = damage;
+    this->Name = obj.Name;
+    this->Hitpoints = obj.Hitpoints;
+    this->Energy = obj.Energy;
+    this->attack_damage = obj.attack_damage;
+    return (*this);
 }
-std::string     ClapTrap::get_name(){return (this->Name);}
-unsigned int    ClapTrap::get_damage() {return (this->attack_damage);}
-unsigned int    ClapTrap::get_energy(){return (this->Energy);}
-unsigned int    ClapTrap::get_points(){return (this->Hitpoints);}

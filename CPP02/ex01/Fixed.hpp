@@ -10,7 +10,6 @@ class   Fixed
 {
     int val;
     static const int    bit = 8;
-    float   nbr;
 
     public:
         Fixed();
