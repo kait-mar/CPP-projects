@@ -1,4 +1,6 @@
-#include "poly.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 Dog::Dog()
 {
@@ -22,12 +24,16 @@ Cat::~Cat()
     std::cout<<this->type<<" destructor called\n";
 }
 
-
 Animal::Animal()
 {
     std::cout<<"default Animal constructor called\n";
+    this->type = "animal";
 }
 
+Animal::Animal(Animal const &obj)
+{
+    this->type = obj.type;
+}
 Animal::Animal(std::string str) : type(str)
 {
     std::cout<<"Animal constructor called\n";

@@ -4,7 +4,7 @@ CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  poly.cpp main.cpp
+SRCS=  poly.cpp main.cpp WrongAnimal.cpp
 OBJ = $(SRCS:.c=.o)
 
 DELETEOBJ= rm -rf *.o

@@ -3,7 +3,7 @@
 int main()
 {
     DiamondTrap a("kait");
-    a._print();
+    std::cout<<"--------\n"; a._print(); std::cout<<"--------\n";
     a.whoAmI();
     std::cout<<"**********\n";
     a.attack("marry");

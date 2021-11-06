@@ -10,11 +10,19 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string str)
 {
-    std::cout<<this->Name<<" FragTrap constructor called\n";
+    std::cout<<str<<" FragTrap constructor called\n";
     this->Name = str;
     this->Hitpoints = 100;
     this->Energy = 100;
     this->attack_damage = 30;
+}
+
+void    FragTrap::_print()
+{
+    std::cout<<"Now, Name is ["<<this->Name
+            <<"],\nHitpoints is ["<<this->Hitpoints
+            <<"],\nEnergy is ["<<this->Energy
+            <<"],\nattack damage is ["<<this->attack_damage<<"]\n";
 }
 
 FragTrap::FragTrap(FragTrap const &obj)
@@ -24,6 +32,7 @@ FragTrap::FragTrap(FragTrap const &obj)
     this->Energy = obj.Energy;
     this->attack_damage = obj.attack_damage;
 }
+
 FragTrap::~FragTrap()
 {
     std::cout<<this->Name<<"FragTrap destructor called\n";

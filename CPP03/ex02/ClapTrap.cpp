@@ -18,22 +18,20 @@ void    ClapTrap::attack(std::string const & target)
 {
     std::cout<<"ClapTrap "<<this->Name<<"attack "<<target<<", causing "<<this->attack_damage<<" points of damage !\n";
 }
-void    ClapTrap::_print()
-{
-    std::cout<<"Now, Name is ["<<this->Name
-            <<"],\nHitpoints is ["<<this->Hitpoints
-            <<"],\nEnergy is ["<<this->Energy
-            <<"],\nattack damage is ["<<this->attack_damage<<"]\n";
-}
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-    this->attack_damage += amount;
     std::cout<<"take damage set the damage amount to "<<amount<<std::endl;
 }
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-    this->Energy += amount;
-    std::cout<<"beRepaired function is called\n";
+    std::cout<<"beRepaired function is used with "<<amount<<std::endl;
+}
+ClapTrap::ClapTrap(ClapTrap const &obj)
+{
+    this->Name = obj.Name;
+    this->Hitpoints = obj.Hitpoints;
+    this->Energy = obj.Energy;
+    this->attack_damage = obj.attack_damage;
 }
 ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 {

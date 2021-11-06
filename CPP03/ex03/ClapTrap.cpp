@@ -35,6 +35,13 @@ void    ClapTrap::beRepaired(unsigned int amount)
     this->Energy += amount;
     std::cout<<"beRepaired function is called\n";
 }
+ClapTrap::ClapTrap(ClapTrap const &obj)
+{
+    this->Name = obj.Name;
+    this->Hitpoints = obj.Hitpoints;
+    this->Energy = obj.Energy;
+    this->attack_damage = obj.attack_damage;
+}
 ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 {
     this->Name = obj.Name;

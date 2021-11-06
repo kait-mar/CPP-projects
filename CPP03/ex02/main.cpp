@@ -3,6 +3,7 @@
 int main()
 {
     FragTrap a("kait");
-    a._print();
+    std::cout<<"----------\n"; a._print(); std::cout<<"----------\n";
+    a.attack("marry");
     a.highFivesGuys();
 }

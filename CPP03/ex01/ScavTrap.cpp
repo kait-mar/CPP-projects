@@ -30,12 +30,11 @@ ScavTrap    &ScavTrap::operator=(ScavTrap const &obj)
 
 ScavTrap::ScavTrap(std::string str)
 {
-    std::cout<<"scavtrap constructor called\n";
     this->Name = str;
     this->Hitpoints = 100;
     this->Energy = 50;
     this->attack_damage = 20;
-     //this->_print();
+    std::cout<<str<<" ScavTrap constructor called\n";
 }
 
 void    ScavTrap::_print()

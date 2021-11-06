@@ -9,11 +9,10 @@ DiamondTrap::DiamondTrap(std::string str)
 {
     this->Name = str;
     ClapTrap::Name = str + "_clap_name";
-    std::cout<<this->Name<<" diamond constructor called]]]]]]]\n";
+    std::cout<<this->Name<<" diamond constructor called]]]]\n";
     this->Hitpoints = FragTrap::Hitpoints;
     this->Energy = ScavTrap::Energy;
     this->attack_damage = FragTrap::attack_damage;
-    //this->attack() = ScavTrap::attack();
 }
 
 void    DiamondTrap::_print()

@@ -10,7 +10,7 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string str)
 {
-    std::cout<<this->Name<<" FragTrap constructor called\n";
+    std::cout<<str<<" FragTrap constructor called\n";
     this->Name = str;
     this->Hitpoints = 100;
     this->Energy = 100;

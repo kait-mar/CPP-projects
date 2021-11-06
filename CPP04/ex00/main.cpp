@@ -1,4 +1,7 @@
-#include "poly.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -9,6 +12,17 @@ int main()
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
     j->makeSound();
-    //delete(i); delete(j); delete(meta); what happened here ?
     meta->makeSound();
+    delete(i); delete(j); delete(meta);
 }
+
+ /*
+int main()
+{
+    const WrongAnimal* meta = new WrongAnimal();
+    const WrongAnimal* i = new WrongCat();
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    meta->makeSound();
+    delete(i); delete(meta);
+}*/
