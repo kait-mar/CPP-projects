@@ -4,7 +4,7 @@ CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  brain.cpp main.cpp Animal.cpp
+SRCS=  brain.cpp main.cpp Animal.cpp Cat.cpp Dog.cpp
 OBJ = $(SRCS:.c=.o)
 
 DELETEOBJ= rm -rf *.o

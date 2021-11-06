@@ -4,3 +4,5 @@ in CPP04/ex01 :
     I can't see the utility of using virtual in destructors !!
     how about the deep copy of cats and dogs ? I've orload the = operator but not been called !!!
 }
+
+// don't forget to modify in ex02/main.cpp

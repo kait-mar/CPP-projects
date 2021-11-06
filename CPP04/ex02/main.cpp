@@ -1,45 +1,37 @@
-#include "brain.hpp"
-
-/*int main()
-{
-    int    i = 0;
-    Animal *animal = new Animal[6];
-    std::cout<<"*****************\n";
-    while (i < 6)
-    {
-        if (i % 2)
-            animal[i++] = Cat();
-        else
-            animal[i++] = Dog();
-        std::cout<<"-------------------\n";
-    }
-    std::cout<<"*****************\n";
-    delete [] animal;
-    // i = 0;
-    // while (i < 6)
-    // {
-    //     animal[i++].~Animal();
-    // }
-
-    //delete[] animal;
-    //i = 0;
-    // while (i < 6)
-    // {
-    //     if (i % 2)
-    //         ~Cat().~Animal();
-    //     else
-    //         animal[i++].~Dog();
-    //     std::cout<<"-------------------\n";
-    // }
-}*/
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
-    const Animal* j = new Dog();
-    std::cout<<"-------------------\n";
-    const Animal* i = new Cat();
-    std::cout<<"-------------------\n";
-    delete j;//should not create a leak
-    std::cout<<"-------------------\n";
-    delete i;
+    Animal  **animal = new Animal*[4];
+    int i = 0;
+
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
+    Dog copy(basic);
+    std::cout<<"-----------------\n";
+    while ( i < 4)
+    {
+        if (i % 2)
+            animal[i] = new Cat();
+        else
+            animal[i] = new Dog();
+        std::cout<<"///////\n";
+        i++;
+    }
+    i = 0;
+    std::cout<<"*************************\n";
+    while ( i < 4)
+    {
+        if (i % 2)
+            delete(animal[i]);
+        else
+            delete(animal[i]);
+        i++;
+        std::cout<<"///////\n";
+    }
+    std::cout<<"****************\n";
+    return (0);
 }

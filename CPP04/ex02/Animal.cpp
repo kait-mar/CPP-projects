@@ -15,14 +15,18 @@ Animal::~Animal()
 {
     std::cout<<"Animal destructor called\n";
 }
+Animal  &Animal::operator=(Animal const &obj)
+{
+    this->type = obj.type;
+    return (*this);
+}
 
 std::string Animal::getType() const
 {
     return (this->type);
 }
 
-void    Animal::makeSound() const
+Animal::Animal(Animal const &obj)
 {
-    std::cout<<"Animal not specified!!\n";
+    this->type = obj.type;
 }
-
