@@ -1,4 +1,5 @@
-#include "character.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {

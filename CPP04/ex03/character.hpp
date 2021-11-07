@@ -1,7 +1,8 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "materia.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
 
 class ICharacter
 {

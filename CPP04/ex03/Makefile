@@ -4,7 +4,8 @@ CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  materia.cpp main.cpp character.cpp
+SRCS=  Amateria.cpp main.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
+
 OBJ = $(SRCS:.c=.o)
 
 DELETEOBJ= rm -rf *.o

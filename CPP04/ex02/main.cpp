@@ -3,6 +3,7 @@
 
 int main()
 {
+    //Animal  a;
     Animal  **animal = new Animal*[4];
     int i = 0;
 

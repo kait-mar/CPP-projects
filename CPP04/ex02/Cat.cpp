@@ -32,6 +32,7 @@ void    Cat::deepCopy(Cat cat)
         i++;
     }
 }
+
 Cat::~Cat()
 {
     delete(this->brain);

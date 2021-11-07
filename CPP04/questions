@@ -5,4 +5,4 @@ in CPP04/ex01 :
     how about the deep copy of cats and dogs ? I've orload the = operator but not been called !!!
 }
 
-// don't forget to modify in ex02/main.cpp
+// don't forget to modify in ex02/main.cpp*

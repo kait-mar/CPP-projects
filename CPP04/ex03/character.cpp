@@ -1,4 +1,4 @@
-#include "character.hpp"
+#include "Character.hpp"
 
 Character::Character()
 : len(0)
@@ -41,7 +41,9 @@ Character  &Character::operator=(Character &obj)
         {
             if (this->getMateria(i) != NULL)
                 delete(this->getMateria(i));
+            i++;
         }
+        i = 0;
         while (i < this->len)
         {
             this->slot[i] = obj.getMateria(i)->clone();
