@@ -2,7 +2,14 @@
 
 int    main()
 {
-    Bureaucrat  a("kait", -100);
-    std::cout<<a;
+    try
+    {
+        Bureaucrat  a("kait", 150);
+        std::cout<<a;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << e.what();
+    }
     return (0);
 }

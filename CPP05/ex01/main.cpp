@@ -3,7 +3,7 @@
 int    main()
 {
     try{
-        Bureaucrat  a("kait", 30);
+        Bureaucrat  a("kait", 50);
         std::cout<<a;
         Form    form("mary", 50, 100);
         std::cout<<form;
@@ -13,19 +13,7 @@ int    main()
         //is it okay if I place it outside the try ?
         //no it is not okay!!!!
     }
-    catch(Bureaucrat::GradeTooHighException &s)
-    {
-        std::cout<<s.what();
-    }
-    catch(Bureaucrat::GradeTooLowException &s)
-    {
-        std::cout<<s.what();
-    }
-    catch(Form::GradeTooHighException &m)
-    {
-        std::cout<<m.what();
-    }
-    catch(Form::GradeTooLowException &s)
+    catch(std::exception &s)
     {
         std::cout<<s.what();
     }

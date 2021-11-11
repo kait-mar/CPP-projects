@@ -1,6 +1,6 @@
 NAME= bureau
 
-CC= clang++ -g
+CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 

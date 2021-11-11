@@ -12,19 +12,21 @@ private:
     bool    sign;
 
 public:
-        struct  GradeTooHighException : public std::exception
-    {
-        const char *what() const throw(){
-            return ("an exception of a too high FORM grade has been raised\n");
-        }
-    };
-    struct GradeTooLowException : public std::exception
-    {
-        const char  *what() const throw(){
-            return ("an exception of a too low FORM grade has been raised\n");
-        }
-    };
+        class  GradeTooHighException : public std::exception
+        {
+            const char *what() const throw(){
+                return ("an exception of a too high FORM grade has been raised\n");
+            }
+        };
+        class GradeTooLowException : public std::exception
+        {
+            const char  *what() const throw(){
+                return ("an exception of a too low FORM grade has been raised\n");
+            }
+        };
     Form(std::string str, int note1, int note2);
+    Form(Form const &);
+    Form    &operator=(Form const &);
     std::string getName();
     int         getGrade_sign();
     int         getGrade_exec();

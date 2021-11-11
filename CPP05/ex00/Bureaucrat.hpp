@@ -10,14 +10,16 @@ class Bureaucrat
 private:
     std::string const name;
     int grade;
-    struct  GradeTooHighException : public std::exception
+    class  GradeTooHighException : public std::exception
     {
+    public:
         const char *what() const throw(){
             return ("an exception of a too high grade has been raised\n");
         }
     };
-    struct GradeTooLowException : public std::exception
+    class GradeTooLowException : public std::exception
     {
+    public:
         const char  *what() const throw(){
             return ("an exception of a too low grade has been raised\n");
         }
@@ -25,6 +27,8 @@ private:
 public:
     Bureaucrat();
     Bureaucrat(std::string str, int note);
+    Bureaucrat(Bureaucrat const &);
+    Bureaucrat   &operator=(Bureaucrat const &);
     std::string getName();
     int         getGrade();
     void    dec();

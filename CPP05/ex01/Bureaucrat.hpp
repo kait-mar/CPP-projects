@@ -6,29 +6,30 @@
 #include <exception>
 
 class   Form;
-
 class Bureaucrat
 {
 private:
     std::string const name;
     int grade;
-
-public:
-    struct  GradeTooHighException : public std::exception
+    class  GradeTooHighException : public std::exception
     {
+    public:
         const char *what() const throw(){
-            return ("an exception of a too high Bureaucrat grade has been raised\n");
+            return ("an exception of a too high grade has been raised\n");
         }
     };
-    struct GradeTooLowException : public std::exception
+    class GradeTooLowException : public std::exception
     {
+    public:
         const char  *what() const throw(){
-            return ("an exception of a too low Bureaucrat grade has been raised\n");
+            return ("an exception of a too low grade has been raised\n");
         }
     };
-
+public:
     Bureaucrat();
     Bureaucrat(std::string str, int note);
+    Bureaucrat(Bureaucrat const &);
+    Bureaucrat   &operator=(Bureaucrat const &);
     std::string getName();
     int         getGrade();
     void    dec();
@@ -36,7 +37,6 @@ public:
     void    signForm(Form form);
     ~Bureaucrat();
 };
-
 std::ostream  &operator<<(std::ostream &os, Bureaucrat &obj);  
 
 #endif

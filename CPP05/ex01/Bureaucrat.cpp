@@ -4,25 +4,26 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(std::string str, int note): name(str), grade(note)
+Bureaucrat::Bureaucrat(std::string str, int note): name(str)
 {
-    // try
-    // {
-        if (note > 150)
-            throw(Bureaucrat::GradeTooLowException());
-        else if (note < 1)
-            throw(Bureaucrat::GradeTooHighException());
-    // }
-    // catch(Bureaucrat::GradeTooHighException &s)
-    // {
-    //     std::cout<<s.what();
-    //     //std::exit(1);
-    // }
-    // catch(Bureaucrat::GradeTooLowException &b)
-    // {
-    //     std::cout<<b.what();
-    //     //std::exit(1);
-    // }
+    if (note > 150)
+        throw(Bureaucrat::GradeTooLowException());
+    else if (note < 1)
+        throw(Bureaucrat::GradeTooHighException());
+    else
+        this->grade = note;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & obj):
+name(obj.name), grade(obj.grade)
+{
+
+}
+
+Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &obj)
+{
+    this->grade = obj.grade;
+    return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
@@ -31,17 +32,18 @@ Bureaucrat::~Bureaucrat()
 
 void    Bureaucrat::dec()
 {
-    if (this->grade + 1 > 150)
-        throw(Bureaucrat::GradeTooLowException());
-    else
+    if (this->grade < 150)
         this->grade += 1;
+    else
+        throw(Bureaucrat::GradeTooLowException());
 }
+
 void    Bureaucrat::inc()
 {
-    if (this->grade - 1 < 1)
-        throw(Bureaucrat::GradeTooHighException());
-    else
+    if (this->grade > 1)
         this->grade -= 1;
+    else
+        throw(Bureaucrat::GradeTooHighException());
 }
 
 std::string Bureaucrat::getName()
@@ -61,19 +63,8 @@ std::ostream  &operator<<(std::ostream &os, Bureaucrat &obj)
 
 void    Bureaucrat::signForm(Form form)
 {
-    // try
-    // {
-        if (form.getSign() == 1)
-            std::cout<<this->name<<" signs "<<form.getName()<<std::endl;
-        else
-            std::cout<<this->name<<" cannot sign because the grade is not that much good";
-   // }
-    /*catch(Form::GradeTooLowException& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    catch(Form::GradeTooHighException& s)
-    {
-        std::cout<<s.what();
-    }*/
+    if (form.getSign() == 1)
+        std::cout<<this->name<<" signs "<<form.getName()<<std::endl;
+    else
+        std::cout<<this->name<<" cannot sign because the grade is not that much good";
 }

@@ -6,25 +6,23 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string str, int note): name(str)
 {
-    try
-    {
-        if (note > 150)
-            throw(Bureaucrat::GradeTooHighException());
-        else if (note < 1)
-            throw(Bureaucrat::GradeTooLowException());
-        else
-            this->grade = note;
-    }
-    catch(Bureaucrat::GradeTooHighException &s)
-    {
-        std::cout<<s.what();
-        std::exit(1);
-    }
-    catch(Bureaucrat::GradeTooLowException &b)
-    {
-        std::cout<<b.what();
-        std::exit(1);
-    }
+    if (note > 150)
+        throw(Bureaucrat::GradeTooLowException());
+    else if (note < 1)
+        throw(Bureaucrat::GradeTooHighException());
+    else
+        this->grade = note;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & obj):
+name(obj.name), grade(obj.grade)
+{
+
+}
+
+Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &obj)
+{
+    this->grade = obj.grade;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -33,11 +31,18 @@ Bureaucrat::~Bureaucrat()
 
 void    Bureaucrat::dec()
 {
-    this->grade += 1;
+    if (this->grade < 150)
+        this->grade += 1;
+    else
+        throw(Bureaucrat::GradeTooLowException());
 }
+
 void    Bureaucrat::inc()
 {
-    this->grade -= 1;
+    if (this->grade > 1)
+        this->grade -= 1;
+    else
+        throw(Bureaucrat::GradeTooHighException());
 }
 
 std::string Bureaucrat::getName()
