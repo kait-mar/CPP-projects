@@ -1,10 +1,10 @@
-NAME= form
+NAME= convert
 
-CC= clang++ -g
+CC= clang++ -g -std=c++98
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS=   main.cpp convert.cpp
 
 OBJ = $(SRCS:.c=.o)
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o form
+	$(CC) $(FLAGS) $(SRCS)  -o convert
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 

@@ -17,6 +17,7 @@ name(obj.name), grade_sign(obj.grade_sign), grade_exec(obj.grade_exec), sign(obj
 Form    &Form::operator=(Form const &obj)
 {
     this->sign = obj.sign;
+    return (*this);
 }
 
 std::string Form::getName()

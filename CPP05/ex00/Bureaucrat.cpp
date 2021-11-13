@@ -23,6 +23,7 @@ name(obj.name), grade(obj.grade)
 Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &obj)
 {
     this->grade = obj.grade;
+    return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
