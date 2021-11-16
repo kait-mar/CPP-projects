@@ -4,6 +4,11 @@ void    char_conv(char *str)
 {
     try
     {
+        if (strlen(str) == 1 && isdigit(*str) == 0)
+        {
+            std::cout<<"char: "<< static_cast<char>(*str)<<std::endl;
+            return ;
+        }
         double   x = std::stod(str);
         int d = x;
         if ((x >= 0 && x < 32) || x == 127)
@@ -23,6 +28,11 @@ void    int_conv(char *str)
 {
     try
     {
+        if (strlen(str) == 1 && isdigit(*str) == 0)
+        {
+            std::cout<<"int: "<< static_cast<int>(*str)<<std::endl;
+            return ;
+        }
         float   x = std::stof(str);
         if (isnan(x) || x > INT_MAX || x < INT_MIN)
             std::cout<< "int: imposible\n";
@@ -39,6 +49,11 @@ void    float_conv(char *str)
 {
     try
     {
+        if (strlen(str) == 1 && isdigit(*str) == 0)
+        {
+            std::cout<<"float: "<< static_cast<float>(*str)<<".0000000f"<<std::endl;
+            return ;
+        }
         float   x = std::stof(str);
         std::cout<<"float: "<< std::to_string(x)<<"f\n";
     }
@@ -52,6 +67,11 @@ void    double_conv(char *str)
 {
     try
     {
+        if (strlen(str) == 1 && isdigit(*str) == 0)
+        {
+            std::cout<<"float: "<< static_cast<float>(*str)<<".00000000"<<std::endl;
+            return ;
+        }
         double   x = std::stod(str);
         std::cout<<"double: "<< std::to_string(x) << std::endl;
     }
@@ -62,15 +82,10 @@ void    double_conv(char *str)
 }
 
 int main(int argc, char **argv)
-//int main()
 {
-    // int argc = 2;
-    // char* argv[] = {(char*)"convert", (char*)"nan", NULL};
     if (argc != 2)
         return (print_error());
-    //can we pass as arg 'a' , 'b' , '*' ..etc and should display the ascii ?!!!
-    //trying direct static_cast !!
-    //std::cout<<"int: " << static_cast<char>(argv[1]);
+    //+inf, +inf
     char_conv(argv[1]);
     int_conv(argv[1]);
     float_conv(argv[1]);
