@@ -3,7 +3,14 @@
 
 #include <iostream>
 
-uintptr_t serialize(void* ptr);
-void* deserialize(uintptr_t raw);
+typedef struct
+{
+    char *name;
+    int type;
+    int *ptr;
+}   Data;
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
 #endif

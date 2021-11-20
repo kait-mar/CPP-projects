@@ -8,6 +8,8 @@
 #include <exception>
 #include <math.h>
 #include <limits.h>
+#define DB_MIN 2.22507e-308 
+#define DB_MAX 1.79769e+308
 
 int     find(std::string str);
 void    add_f(float x);

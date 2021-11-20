@@ -10,7 +10,7 @@ void    char_conv(char *str)
             return ;
         }
         double   x = std::stod(str);
-        int d = x;
+        int d = (int)x;
         if ((x >= 0 && x < 32) || x == 127)
             std::cout<< "char: Non displayable\n";
         else if (std::isprint(x))
@@ -33,7 +33,7 @@ void    int_conv(char *str)
             std::cout<<"int: "<< static_cast<int>(*str)<<std::endl;
             return ;
         }
-        float   x = std::stof(str);
+        double   x = std::stod(str);
         if (isnan(x) || x > INT_MAX || x < INT_MIN)
             std::cout<< "int: imposible\n";
         else
@@ -54,7 +54,7 @@ void    float_conv(char *str)
             std::cout<<"float: "<< static_cast<float>(*str)<<".0000000f"<<std::endl;
             return ;
         }
-        float   x = std::stof(str);
+        double   x = std::stod(str);
         std::cout<<"float: "<< std::to_string(x)<<"f\n";
     }
     catch(std::exception &e)
@@ -85,7 +85,6 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
         return (print_error());
-    //+inf, +inf
     char_conv(argv[1]);
     int_conv(argv[1]);
     float_conv(argv[1]);
