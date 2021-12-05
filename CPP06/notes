@@ -1,0 +1,18 @@
+- downCast => from child to parent | upCast => from parent to child
+- the compiler doesn't accespt the implicit downCast, but accepts the implicit upCast!
+- althaugh the implicit upcast compiles normally, it raises a lotta problem in runtime (execution)
+- when we cast a class to its sub or parent class, this is a reinterpretion cast!! (implicit or explicit)
+- we use static cast when we're sure that the casted var are 'compatible, de meme types ou appartient au meme arbre d'heritage'
+- static_cast is for upCast and downCast !
+******************************
+- dynamic cast is the only cast type that takes place in the runtime and not in compile time, the other casts 'se traitent' in compile time and see later if that poses problems or not !
+- dynamic cast ne marche qu'avec une instance polymorphique(l'une de ses fonctions est virtuelle)
+*******************
+-reinterpret_cast is for 'retypage' , c'est toujours compiler alors c a votre responsabilite de reinterpreter !!
+
+**************************
+- the upCast is always acceptable, but it's not always the case for the dwnCast !!
+**************************
+-connst cast is for changer de qualifieur de type(const) 
+**********************
+-cast operators : when we have an operator in our class that returns a cast, we can cast our object of class to a variable from the same operator cast

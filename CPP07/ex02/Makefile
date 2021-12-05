@@ -1,6 +1,6 @@
 NAME= array
 
-CC= clang++
+CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
