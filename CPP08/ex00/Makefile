@@ -1,6 +1,6 @@
-NAME= templ
+NAME= array
 
-CC= clang++
+CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o templ
+	$(CC) $(FLAGS) $(SRCS)  -o array
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 
