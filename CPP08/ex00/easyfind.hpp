@@ -4,13 +4,18 @@
 #include <iostream>
 #include <exception>
 #include <list>
+#include <vector>
+#include <algorithm>
 
 template <class T>
-T   easyfind(T lst, int element)
+auto   easyfind(T lst, int element)
 {
-    auto search = lst.find(element);
+    auto search = std::find(lst.begin(), lst.end(), element);
     if (search != lst.end())
-        return (element);
+    {
+        std::cout<< *search << ": element found !!\n";
+        return (search);
+    }
     else
         throw(std::exception());
 }

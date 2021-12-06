@@ -1,10 +1,10 @@
-NAME= find
+NAME= span
 
 CC= g++
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=   main.cpp
+SRCS=   main.cpp span.cpp
 
 OBJ = $(SRCS:.c=.o)
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o find
+	$(CC) $(FLAGS) $(SRCS)  -o span
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 
