@@ -1,15 +1,16 @@
 #include "easyfind.hpp"
+#include <stack>
 
 int main()
 {
     try
     {
-        std::vector<int> v = {87, 7, 22};
+        std::vector<int> v;
         for (int i = 5; i < 10; i++)
             v.push_back(i);
         // easyfind(v, 987);
         easyfind(v, 7);
-        std::cout<< *(easyfind(v, 7) + 1) << std::endl;
+        //std::cout<<v[3] << std::endl;
     }
     catch(const std::exception& e)
     {

@@ -2,7 +2,7 @@ NAME= find
 
 CC= g++
 
-FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror -Wc++11-extensions
 
 SRCS=   main.cpp
 

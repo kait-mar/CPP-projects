@@ -8,13 +8,11 @@
 #include <algorithm>
 
 template <class T>
-auto   easyfind(T lst, int element)
+void   easyfind(T lst, int element)
 {
-    auto search = std::find(lst.begin(), lst.end(), element);
-    if (search != lst.end())
+    if (std::find(lst.begin(), lst.end(), element) != lst.end())
     {
-        std::cout<< *search << ": element found !!\n";
-        return (search);
+        std::cout<< element << ": element found !!\n";
     }
     else
         throw(std::exception());
