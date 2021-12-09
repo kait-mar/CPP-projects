@@ -1,6 +1,6 @@
-NAME= span
+NAME= stack
 
-CC= g++
+CC= clang++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
@@ -14,7 +14,7 @@ DELETENAME= rm -rf $(NAME)
 
 all: $(NAME)
 $(NAME):
-	$(CC) $(FLAGS) $(SRCS)  -o span
+	$(CC) $(FLAGS) $(SRCS)  -o stack
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 

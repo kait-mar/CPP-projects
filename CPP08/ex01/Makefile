@@ -1,6 +1,6 @@
 NAME= span
 
-CC= g++
+CC= clang++
 
 FLAGS= -Wall -Wextra -Werror
 

@@ -1,6 +1,6 @@
 NAME= find
 
-CC= g++
+CC= clang++
 
 FLAGS= -Wall -Wextra -Werror -Wc++11-extensions
 

@@ -5,11 +5,12 @@
     "version": "0.2.0",
     "configurations": [
 
+
     {
         "name": "(lldb) Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/CPP08/ex00/find",
+        "program": "${workspaceFolder}/CPP08/ex02/stack",
         "args": [],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
