@@ -31,6 +31,11 @@ public:
             index++;
             MutantStack<T> temp = _m;
             size_t  a = _m.size();
+            if (index == (int)a)
+            {
+                ref = &temp.top() + 1;
+                return ;
+            }
             for (int i = 0; i < (int)a - index - 1; i++)
                 temp.pop();
             ref = &temp.top();
@@ -74,8 +79,6 @@ public:
         while (!temp.empty())
         {
             it.ref = const_cast<T*>(&temp.top()); //here !!
-            // std::cout<< "top returns : " << temp.top() << std::endl
-            //         << "*ref =" << *it.ref << std::endl;
             temp.pop();
         }
         return (it);
@@ -83,9 +86,7 @@ public:
     iterator end() const
     {
         iterator    it(*this);
-        std::cout<< &this->top() + 1 << std::endl;
         it.ref = const_cast<T*>(&this->top() + 1);
-        std::cout<< it.ref << std::endl;
         return (it);
     }
 };
