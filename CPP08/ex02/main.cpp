@@ -11,6 +11,8 @@
     here I am checking if the _m inside the iterator class will change to the new affected object b !!
 */
 
+
+
 int main(){
     MutantStack<int>    mstack;
     mstack.push(5);
@@ -31,12 +33,19 @@ int main(){
     {
         std::cout << *it << std::endl;
         ++it;
-        //check the returned adress from const_cast<>
     }
     std::stack<int> s(mstack);
     std::cout<<"check the adress of top \n";;
     MutantStack<int>    temp = mstack;
-    // std::cout<< &(temp.top())<< std::endl;
-    // std::cout<< &(mstack.top())<< std::endl;
     return 0;
 }
+
+/*
+typedef std::stack<T>::container_type::iterator it;
+difrence between typename typedef
+
+template<class T, >
+class stack
+{
+
+}*/
