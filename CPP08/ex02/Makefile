@@ -1,6 +1,6 @@
 NAME= stack
 
-CC= clang++ -g
+CC= g++ -g
 
 FLAGS= -Wall -Wextra -Werror
 
