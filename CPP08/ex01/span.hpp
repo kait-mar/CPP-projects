@@ -17,6 +17,8 @@ private:
 public:
     Span();
     Span(unsigned int n);
+    Span(Span const &);
+    Span    &operator=(Span const &);
     void    addNumber(int);
     int     shortestSpan();
     int     longestSpan();

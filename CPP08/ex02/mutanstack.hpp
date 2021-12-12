@@ -9,27 +9,40 @@
 #include <stack>
 #include <deque>
 
-
 template <typename T, typename container = std::deque<T> >
 class MutantStack: public std::stack<T, container>
 {
 public:
-   typedef typename std::stack<T, container>::container_type::iterator iterator;
-    MutantStack();
+    typedef typename std::stack<T, container>::container_type::iterator iterator;
+    typedef typename std::stack<T, container>::container_type::reverse_iterator reverse_iterator;
+    MutantStack(){}
+    MutantStack(const MutantStack &obj): std::stack<T, container>(obj.c)
+    {}
+    MutantStack &operator=(const MutantStack &obj)
+    {
+        if (this == &obj)
+            return (*this);
+        std::stack<T, container>::operator=(obj);
+        return (*this);
+    }
     ~MutantStack(){}
     iterator begin()
     {
-        return (std::begin(this->c));
+        return (this->c.begin());
     }
     iterator end()
     {
-        return (std::end(this->c));
+        return (this->c.end());
+    }
+    reverse_iterator    rbegin()
+    {
+        return (this->c.rbegin());
+    }
+    reverse_iterator rend()
+    {
+        return (this->c.rend());
     }
 };
-
-
-
-
 
 
 // template <class T>
